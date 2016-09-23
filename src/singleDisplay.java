@@ -1,5 +1,6 @@
 import java.awt.BorderLayout;
 import java.awt.EventQueue;
+import java.awt.Image;
 import java.awt.image.BufferedImage;
 import java.io.IOException;
 
@@ -10,6 +11,9 @@ import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 import javax.swing.JLabel;
 import javax.swing.SwingConstants;
+import javax.swing.JScrollPane;
+import javax.swing.JTextArea;
+import java.awt.Color;
 
 @SuppressWarnings("unused")
 public class singleDisplay extends JFrame {
@@ -43,8 +47,9 @@ public class singleDisplay extends JFrame {
 		setTitle("Photo Display");
 		setResizable(false);
 		//setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 1089, 654);
+		setBounds(100, 100, 600, 655);
 		contentPane = new JPanel();
+		contentPane.setBackground(new Color(0, 255, 153));
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		BufferedImage image_1 = null;
 		try {
@@ -59,8 +64,22 @@ public class singleDisplay extends JFrame {
 		
 		JLabel lblNewLabel = new JLabel("");
 		lblNewLabel.setHorizontalAlignment(SwingConstants.CENTER);
-		lblNewLabel.setBounds(12, 0, 1065, 614);
+		lblNewLabel.setBounds(26, 39, 535, 510);
 		contentPane.add(lblNewLabel);
+		
+		JLabel lblNewLabel_1 = new JLabel("");
+		lblNewLabel_1.setHorizontalAlignment(SwingConstants.CENTER);
+		lblNewLabel_1.setText(allPhotos.photoList.get(index).photoTitle);
+		lblNewLabel_1.setBounds(26, 12, 535, 15);
+		contentPane.add(lblNewLabel_1);
+		
+		JScrollPane scrollPane = new JScrollPane();
+		scrollPane.setBounds(26, 558, 535, 57);
+		contentPane.add(scrollPane);
+		
+		JTextArea textArea = new JTextArea();
+		textArea.setText(allPhotos.photoList.get(index).photoAnnotation);;
+		scrollPane.setViewportView(textArea);
 		
 		if(0<=index&&index<allPhotos.photoList.size()){
 			BufferedImage image = null;
@@ -71,7 +90,7 @@ public class singleDisplay extends JFrame {
 				// TODO Auto-generated catch block
 				//e.printStackTrace();
 			}
-			lblNewLabel.setIcon(new ImageIcon(image));
+			lblNewLabel.setIcon(new ImageIcon(image.getScaledInstance(500, 500, Image.SCALE_DEFAULT)));
 		}
 		
 	}

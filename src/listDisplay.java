@@ -13,6 +13,7 @@ import java.awt.event.ActionListener;
 import java.awt.image.BufferedImage;
 import java.io.IOException;
 import java.awt.event.ActionEvent;
+import java.awt.Color;
 
 @SuppressWarnings("unused")
 public class listDisplay extends JFrame {
@@ -48,6 +49,7 @@ public class listDisplay extends JFrame {
 		//setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 641, 510);
 		contentPane = new JPanel();
+		contentPane.setBackground(new Color(0, 255, 204));
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		BufferedImage image = null;
 		try {
