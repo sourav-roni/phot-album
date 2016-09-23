@@ -1,0 +1,6 @@
+{
+  "name": "Photo-album",
+  "tagline": "",
+  "body": "# photo-album\r\nDigital Photo Album: You can load up to 10 pictures into your photo album. You will be\r\nable to assign each photo a title (up to 20 chars) and annotation of up to 100 chars. You can also display photos one by one.\r\nAlso, from the displayed titles of photos, a click on a title will display\r\nthe corresponding photo.\r\n",
+  "note": "Don't delete this file! It's used internally to help with page regeneration."
+}
